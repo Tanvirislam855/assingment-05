@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind and daisy ui  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" 
+    rel="stylesheet" 
+    type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>GitHub Issues Tracker</title>
+    <link rel="stylesheet icon" href="assets/github-logo.png"> 
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+
+    <!-- font  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- fontawesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> 
+
+    <style> 
+        *{
+            font-family:"Geist", sans-serif;  
+        }
+    </style>
+
+  </head> 
+  <body>
+    <div class="flex flex-col space-y-3 justify-center items-center">
+    </div>
+    <div class="hero min-h-screen l">
+      <div class="hero-content flex-col w-full">
+        <div class="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl p-5 md:p-10">
+          <div class="text-center space-y-3">
+            <img class="mx-auto"  src="assets/github-logo.png"alt="">
+            <h1 class=" text-3xl font-bold">GitHub Issues Traker</h1>
+            <p class="text-gray-500">sign in to manage your issues</p>
+          </div>
+          <div class="card-body">
+  
+           <fieldset class="fieldset">
+          <label class="text-sm md:text-lg font-bold">Username</label>
+          <input type="Username" class="input outline-none" placeholder="Enter Username" />
+          <p id=" Defaultuser" class="text-purple-600"> Default:admin</p>
+          <label class="text-sm md:text-lg font-bold">Password</label>
+          <input type="password" class="input" placeholder="Enter Password" />
+          <p id="Default Password" class="text-purple-600">Default:admin123</p> 
+          <button onclick="loadbtn()" id="singInBtn" class="btn bg-blue-900 mt-4 text-white rounded-full">Sing In</button>
+          <div class="divider">OR</div>
+                  <div class="flex flex-col items-center justify-center ">
+                    <p class=" text-gray-500 mb-5 text-sm md:text-lg">Demo Credentials:</p>
+                    <h3 class=" text-sm md:text-lg"><span class="font-bold  text-sm md:text-lg">UserName: </span>admin</h3>
+                    <h3 class=" text-sm md:text-lg"><span class="font-bold  text-sm md:text-lg">Password: </span> admin123</h3>
+                  </div>
+
+          </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script/login.js"></script>
+  </body>
+  </html>
+  
+   

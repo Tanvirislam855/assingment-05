@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- tailwind and desiui -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <!-- google font link -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">.
+    
+    <!-- font awesome link  -->
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title> GitHub Issue Traker Main</title>
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-base-100 shadow-lg">
+      <div class="flex justify-between container mx-auto">
+        <div class="flex items-center gap-1">
+          <img class="w-10" src="./assets/github-logo.png" alt="logo" />
+          <h1 class="text-2xl font-bold hidden md:block">
+            GitHub Issues Tracker
+          </h1>
+        </div>
+        <div class="navbar-end flex gap-1">
+          <input id="search"type="text" placeholder=" Search issues..."class="input input-bordered border-2 shadow-lg outline-none w-100 md:w-80" />
+          <button class="btn btn-primary">+ New Issue</button>
+        </div>
+      </div>
+    </nav>
+    <main class="container mx-auto">
+      <!--buttons -->
+      <div id="buttons" class="py-10 md:py-8 px-2 shadow-lg mt-15 bg-white">
+       <button id="allBtn" class="btn btn-primary">All</button>
+       <button  id="openBtn" class="btn">Open</button>
+        <button id="closedBtn" class="btn">Closed</button>
+       </div>
+     
+      <!-- count part -->
+      <section class="px-2 py-10 md:py-10 rounded shadow-lg mt-15 bg-white ">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="left-side flex flex-col md:flex-row items-center gap-1">
+            <div class="bg-purple-300/50 p-2 rounded-full">
+              <img src="./assets/Aperture.png" alt="Aperture.png" />
+            </div>
+            <div class="flex flex-col items-center md:items-start">
+              <div class="flex gap-1 text-xl font-bold md:text-2xl">
+                <h1 id="totalIssues">0</h1><p>Issues</p>
+              </div>
+              <p class="text-gray-500 font-semibold">Track and manage your project issues </p>
+            </div>
+          </div>
+          <div class="divider mb-0"></div>
+          <div class="right-sidd flex items-center gap-4">
+            <p>
+              <span class="text-green-500 w-10 h-5 rounded-full"><i class="fa-solid fa-circle"></i></span>
+              Open
+            </p>
+            <p>
+              <span class="text-purple-500 w-5 h-10"><i class="fa-solid fa-circle"></i> </span>Closed
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- all card section -->
+      <section id="cardContainer" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 mt-6 ">
+        <div class="bg-white shadow rounded-xl py-10 px-5 min-h-[380px]:border-t-4 border-green-500">
+          <div class="flex justify-between">
+            <img src="./assets/Open-Status.png" alt="" />
+            <h1 class="text-red-500 py-2 px-5 md:px-10 bg-red-100 rounded-full md:text-xl font-bold">HIGH</h1>
+          </div>
+          <div class="space-y-2">
+            <h1 class="text-2xl font-bold">
+              Fix navigation menu on mobile devices
+            </h1>
+            <p class="text-gray-500 line-clamp-2">
+              The navigation menu doesn't collapse properly on mobile devices...
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <p class="btn bg-red-100 rounded-full border border-red-500 text-red-500 font-bold">
+              <span><i class="fa-solid fa-bug"></i></span> BUG
+            </p>
+            <p class=" bg-yellow-100 rounded-full  border border-yellow-500 text-yellow-500 font-bold">
+              <span><i class="fa-regular fa-life-ring"></i></span> help wanted
+            </p>
+          </div>
+          <div class="divider"></div>
+          <div class="space-y-2">
+            <p>#1by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- spinner -->
+      <section id="spinner" class="flex items-center justify-center py-20 hidden">
+       <span class="loading loading-dots loading-xl"></span>
+      </section>
+
+      <!-- Opened Cards -->
+       <section id="openCards" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 hidden">
+
+       </section>
+      <!-- Closed Cards -->
+       <section id="closedCards" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 hidden">
+
+       </section>
+
+       <!-- modal -->
+        <section >
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="issues_modal.showModal()">open modal</button> -->
+            <dialog id="issues_modal" class="modal modal-bottom sm:modal-middle">
+              <div id="modal">
+
+              </div>
+            </dialog>
+        </section>
+    </main>
+    <script src="./script/home.js"></script>
+  </body>
+</html>
