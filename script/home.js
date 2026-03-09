@@ -197,8 +197,8 @@ async function displayAllIssues(cards) {
               <div>
               </div>
               <div class="divider"></div>
-              <div class="space-y-2">
-                <p>#1 by ${card.author}</p>
+              <div class="space-y-2 text-gray-600 font-bold">
+                <p>#1 by tanvir ${card.author}</p>
                 <p>${new Date(card.updatedAt).toLocaleDateString("en", "GB")}</p>
               </div>
             </div>
