@@ -44,7 +44,7 @@ signInBtn.addEventListener("click", (e) => {
     defaultPassword.classList.add("text-green-500");
     defaultPassword.innerHTML = `<i class="fa-regular fa-circle-check"></i> Correct your password`;
 
-    window.location.href = "./home.html";
+    window.location.href = "home.html";
   }
 
   console.log(userNameValue, passwordValue);
