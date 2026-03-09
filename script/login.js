@@ -44,11 +44,14 @@ signInBtn.addEventListener("click", (e) => {
     defaultPassword.classList.add("text-green-500");
     defaultPassword.innerHTML = `<i class="fa-regular fa-circle-check"></i> Correct your password`;
 
+    alert("done")
     // window.location.href = "./home.html";
+    window.location.assign("home.html");
    
-  setTimeout(() => {
-            window.location.assign("./home.html");
-        }, 500); }
+  // setTimeout(() => {
+            // window.location.assign("./home.html");
+        // }, 500); 
+        }
 
 
   console.log(userNameValue, passwordValue);
