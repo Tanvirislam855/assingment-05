@@ -24,9 +24,10 @@
     />
     <title> GitHub Issue Traker Main</title>
 
-    <style type="text/tailwindcss">
-      @theme {
-        --color-clifford: #da373d;
+    <style>
+      .geist{
+        font-family:"Geist",sans-serif;
+        font-optical-sizing:auto;
       }
     </style>
   </head>
@@ -81,35 +82,35 @@
       </section>
 
       <!-- all card section -->
-      <section id="cardContainer" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 mt-6 ">
-        <div class="bg-white shadow rounded-xl py-10 px-5 min-h-[380px]:border-t-4 border-green-500">
-          <div class="flex justify-between">
-            <img src="./assets/Open-Status.png" alt="" />
-            <h1 class="text-red-500 py-2 px-5 md:px-10 bg-red-100 rounded-full md:text-xl font-bold">HIGH</h1>
-          </div>
-          <div class="space-y-2">
-            <h1 class="text-2xl font-bold">
-              Fix navigation menu on mobile devices
-            </h1>
-            <p class="text-gray-500 line-clamp-2">
-              The navigation menu doesn't collapse properly on mobile devices...
-            </p>
-          </div>
-          <div class="flex gap-2">
-            <p class="btn bg-red-100 rounded-full border border-red-500 text-red-500 font-bold">
-              <span><i class="fa-solid fa-bug"></i></span> BUG
-            </p>
-            <p class=" bg-yellow-100 rounded-full  border border-yellow-500 text-yellow-500 font-bold">
-              <span><i class="fa-regular fa-life-ring"></i></span> help wanted
-            </p>
-          </div>
-          <div class="divider"></div>
-          <div class="space-y-2">
-            <p>#1by john_doe</p>
-            <p>1/15/2024</p>
-          </div>
-        </div>
-      </section>
+      <section id="cardContainer" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 mt-6 "> 
+         <div class="bg-white shadow rounded-xl py-10 px-5 min-h-[380px] border-t-4 border-green-500"> 
+           <div class="flex justify-between"> 
+             <img src="./assets/Open-Status.png" alt="" /> 
+             <h1 class="text-red-500 py-2 px-5 md:px-10 bg-red-100 rounded-full md:text-xl font-bold">HIGH</h1> 
+           </div> 
+           <div class="space-y-2"> 
+             <h1 class="text-2xl font-bold"> 
+               Fix navigation menu on mobile devices 
+             </h1> 
+             <p class="text-gray-500 line-clamp-2"> 
+               The navigation menu doesn't collapse properly on mobile devices... 
+             </p> 
+           </div> 
+           <div class="flex gap-2"> 
+             <p class="btn bg-red-100 rounded-full border border-red-500 text-red-500 font-bold"> 
+               <span><i class="fa-solid fa-bug"></i></span> BUG 
+             </p> 
+             <p class=" bg-yellow-100 rounded-full  border border-yellow-500 text-yellow-500 font-bold"> 
+               <span><i class="fa-regular fa-life-ring"></i></span> help wanted 
+             </p> 
+           </div> 
+           <div class="divider"></div> 
+           <div class="space-y-2"> 
+             <p>#1by john_doe</p> 
+             <p>1/15/2024</p> 
+           </div> 
+         </div> 
+     </section>
 
       <!-- spinner -->
       <section id="spinner" class="flex items-center justify-center py-20 hidden">
@@ -127,8 +128,6 @@
 
        <!-- modal -->
         <section >
-            <!-- Open the modal using ID.showModal() method -->
-            <!-- <button class="btn" onclick="issues_modal.showModal()">open modal</button> -->
             <dialog id="issues_modal" class="modal modal-bottom sm:modal-middle">
               <div id="modal">
 
@@ -136,6 +135,6 @@
             </dialog>
         </section>
     </main>
-    <script src="./script/home.js"></script>
+      <script src="/script/home.js"></script>
   </body>
 </html>
