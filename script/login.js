@@ -46,7 +46,7 @@ signInBtn.addEventListener("click", (e) => {
 
     // alert("done")
     // window.location.href = "./home.html";
-    window.location.assign("./home.html");
+    window.location.assign("home.html");
    
   // setTimeout(() => {
             // window.location.assign("./home.html");
